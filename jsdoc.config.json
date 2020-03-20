@@ -1,0 +1,12 @@
+{
+  "opts": {
+    "destination": "./docs",
+    "package": "./package.json",
+    "recurse": true,
+    "template": "./node_modules/ink-docstrap/template",
+    "pedantic": true
+  },
+  "source": {
+    "include": ["./lib"]
+  }
+}
