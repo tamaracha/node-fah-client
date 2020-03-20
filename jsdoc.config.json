@@ -8,5 +8,12 @@
   },
   "source": {
     "include": ["./lib"]
+  },
+  "plugins": [
+    "jsdoc-plugin-typescript",
+    "./node_modules/jsdoc/plugins/markdown"
+  ],
+  "typescript": {
+    "moduleRoot": "lib"
   }
 }

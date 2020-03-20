@@ -5,7 +5,8 @@
     "declaration": true,
     "emitDeclarationOnly": true,
     "allowJs": true,
-    "checkJs": true
+    "checkJs": true,
+    "strict": true
   },
   "files": [
     "./lib/index.js"
