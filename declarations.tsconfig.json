@@ -1,14 +1,20 @@
 {
   "compilerOptions": {
+    "target": "es2019",
+    "lib": ["es2019"],
+    "module": "commonjs",
     "outFile": "./lib/index.d.ts",
     "noEmit": false,
     "declaration": true,
     "emitDeclarationOnly": true,
     "allowJs": true,
     "checkJs": true,
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "types": ["node"]
   },
   "files": [
     "./lib/index.js"
-  ],
+  ]
 }

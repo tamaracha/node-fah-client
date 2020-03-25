@@ -3,15 +3,19 @@
   "version": "0.1.0",
   "description": "Connect to the remote interface of Folding@home in a programmatic manner",
   "main": "lib/index.js",
-  "typings": "lib/index.d.ts",
-  "type": "commonjs",
+  "exports": {
+    ".": "./lib/fah-client.js",
+    "./commands": "./lib/commands/index.js"
+  },
+  "types": "lib/index.d.ts",
+  "type": "module",
   "private": true,
   "scripts": {
     "lint": "eslint lib/**/*.js",
     "test": "riteway lib/**/*.spec.js | tap-nyc",
     "instrument": "nyc npm test",
     "docs": "jsdoc -c jsdoc.config.json",
-    "typings": "tsc -p declarations.tsconfig.json",
+    "types": "tsc -p declarations.tsconfig.json",
     "build": "npm run docs && npm run typings"
   },
   "author": "",
@@ -20,8 +24,11 @@
     "node": ">=10.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
-    "eslint-config-standard": "^14.1.0",
+    "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.1",
     "eslint-plugin-node": "^11.0.0",
     "eslint-plugin-promise": "^4.2.1",
@@ -35,9 +42,11 @@
     "react": "^16.13.0",
     "riteway": "^6.1.1",
     "tap-nyc": "^1.0.3",
+    "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
+    "fah-pyon": "github:tamaracha/node-fah-pyon",
     "telnet-client": "^1.2.11"
   },
   "nyc": {
@@ -50,7 +59,7 @@
     "lib/**/*.js": [
       "prettier-standard",
       "eslint --fix --format stylish",
-      "tsc --noEmit --checkJs --allowJs --strict"
+      "tsc --noEmit --checkJs --allowJs --strict --esModuleInterop"
     ]
   },
   "husky": {
