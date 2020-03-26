@@ -12,6 +12,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint lib/**/*.js",
+    "format": "prettier-standard lib/**/*.js",
     "test": "riteway lib/**/*.spec.js | tap-nyc",
     "instrument": "nyc npm test",
     "docs": "jsdoc -c jsdoc.config.json",
