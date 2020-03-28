@@ -10,11 +10,10 @@
     "allowJs": true,
     "checkJs": true,
     "strict": true,
-    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "types": ["node"]
+    "types": ["node"],
+    "removeComments": true
   },
-  "files": [
-    "./lib/index.js"
-  ]
+  "files": ["./lib/index.js"]
 }
