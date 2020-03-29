@@ -1,4 +1,5 @@
-export function list(): import("./helpers.js").Command;
-export function create(id: number, rate: number, payload: import("./helpers.js").Command): import("./helpers.js").Command;
-export function clear(): import("./helpers.js").Command;
-export function destroy(id: number): import("./helpers.js").Command;
+export function list(): Command<string>;
+export function create<R>(id: number, rate: number, payload: Command<R>): Command<string>;
+export function clear(): Command<string>;
+export function destroy(id: number): Command<string>;
+import { Command } from "./command.js";

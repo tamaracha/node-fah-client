@@ -52,13 +52,12 @@
     "check-coverage": true
   },
   "lint-staged": {
-    "lib/**/*.js": [
-      "prettier-standard --lint"
-    ],
     "lib/**/!(*.spec).js": [
+      "prettier-standard --lint",
       "tsc --noEmit --allowJs --checkJs --allowSyntheticDefaultImports --moduleResolution node --target es2019 --lib es2019 --module esnext --strict"
     ],
     "lib/**/*.spec.js": [
+      "prettier-standard --lint",
       "tsc --noEmit --allowJs --checkJs --allowSyntheticDefaultImports --moduleResolution node --target es2019 --lib es2019 --module esnext "
     ]
   },
