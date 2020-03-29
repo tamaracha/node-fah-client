@@ -6,7 +6,7 @@
         "targets": {
           "chrome": "80"
         },
-        "useBuiltIns": "usage",
+        "useBuiltIns": "usage"
       }
     ]
   ]

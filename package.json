@@ -4,20 +4,20 @@
   "description": "Connect to the remote interface of Folding@home in a programmatic manner",
   "main": "./lib/index.js",
   "exports": {
-    ".": "./lib/fah-client.js",
+    ".": "./lib/index.js",
     "./commands": "./lib/commands/index.js"
   },
   "types": "./types/index.d.ts",
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "eslint lib/**/*.js",
-    "format": "prettier-standard lib/**/*.js",
-    "test": "riteway lib/**/*.spec.cjs | tap-nyc",
+    "lint": "prettier-standard --lint 'lib/**/*.js'",
+    "format": "prettier-standard 'lib/**/*.js'",
+    "test": "ava --tap|tap-nyc",
     "instrument": "nyc npm test",
-    "docs": "jsdoc -c jsdoc.config.json",
-    "types": "tsc -p declarations.tsconfig.json",
-    "build": "npm run docs && npm run typings"
+    "docs": "jsdoc -c ./config/jsdoc.config.json",
+    "types": "tsc -p ./config/declarations.tsconfig.json",
+    "build": "npm run docs && npm run types"
   },
   "author": "",
   "license": "MIT",
@@ -25,6 +25,7 @@
     "node": ">=10.0.0"
   },
   "devDependencies": {
+    "ava": "^3.5.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.1",
@@ -37,10 +38,7 @@
     "jsdoc-plugin-typescript": "^2.0.5",
     "nyc": "^15.0.0",
     "prettier-standard": "^16.2.1",
-    "react": "^16.13.0",
-    "riteway": "^6.1.1",
     "tap-nyc": "^1.0.3",
-    "tslib": "^1.11.1",
     "typescript": "^3.8.3"
   },
   "dependencies": {
@@ -55,9 +53,13 @@
   },
   "lint-staged": {
     "lib/**/*.js": [
-      "prettier-standard",
-      "eslint --fix --format stylish",
-      "tsc --noEmit --checkJs --allowJs --strict --esModuleInterop"
+      "prettier-standard --lint"
+    ],
+    "lib/**/!(*.spec).js": [
+      "tsc --noEmit --allowJs --checkJs --allowSyntheticDefaultImports --moduleResolution node --target es2019 --lib es2019 --module esnext --strict"
+    ],
+    "lib/**/*.spec.js": [
+      "tsc --noEmit --allowJs --checkJs --allowSyntheticDefaultImports --moduleResolution node --target es2019 --lib es2019 --module esnext "
     ]
   },
   "husky": {
