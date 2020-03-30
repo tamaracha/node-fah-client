@@ -36,6 +36,7 @@
     "ink-docstrap": "^1.3.2",
     "jsdoc": "^3.6.3",
     "jsdoc-plugin-typescript": "^2.0.5",
+    "lint-staged": "^10.0.10",
     "nyc": "^15.0.0",
     "prettier-standard": "^16.2.1",
     "tap-nyc": "^1.0.3",
@@ -52,6 +53,9 @@
     "check-coverage": true
   },
   "lint-staged": {
+    "*.(json|yml)": [
+      "prettier-standard"
+    ],
     "lib/**/!(*.spec).js": [
       "prettier-standard --lint",
       "tsc --noEmit --allowJs --checkJs --allowSyntheticDefaultImports --moduleResolution node --target es2019 --lib es2019 --module esnext --strict"
