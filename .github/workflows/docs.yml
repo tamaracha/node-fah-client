@@ -24,7 +24,7 @@ jobs:
         CI: true
     - name: deploy docs
       uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          SSH: true
-          BRANCH: gh-pages
-          FOLDER: docs
+      with:
+        SSH: true
+        BRANCH: gh-pages
+        FOLDER: docs
