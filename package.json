@@ -17,7 +17,8 @@
     "instrument": "nyc npm test",
     "docs": "jsdoc -c ./config/jsdoc.config.json",
     "types": "tsc -p ./config/declarations.tsconfig.json",
-    "build": "npm run docs && npm run types"
+    "build": "npm run docs && npm run types",
+    "prepare": "npm run types"
   },
   "author": "",
   "license": "MIT",
@@ -46,6 +47,10 @@
     "fah-pyon": "github:tamaracha/node-fah-pyon",
     "telnet-client": "^1.2.11"
   },
+  "files": [
+    "lib/**/!(*.spec).?(c|m)js",
+    "types/**/*.d.ts"
+  ],
   "nyc": {
     "reporter": [
       "html"
