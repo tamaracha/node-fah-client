@@ -27,4 +27,4 @@ jobs:
         with:
           SSH: true
           BRANCH: gh-pages
-          FOLDER: docs/fah-client
+          FOLDER: docs

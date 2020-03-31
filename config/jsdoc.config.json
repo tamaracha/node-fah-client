@@ -15,5 +15,8 @@
   ],
   "typescript": {
     "moduleRoot": "lib"
+  },
+  "templates": {
+    "disablePackagePath": true
   }
 }
