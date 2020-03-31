@@ -23,6 +23,7 @@ It communicates with the FahClient program and can receive Command objects.
 A command contains a textual input representation for the fah interface and information about the expected response type.
 Users of this package are not supposed to create these Command objects manually, but should use the factory methods provided in this package.
 A FahClient instance inputs the command text to the fah interface and tries to parse the response.
+Please view the [API docs](https://tamaracha.github.io/node-fah-client) for usage details.
 
 ```node
 /** demo.mjs */
@@ -53,6 +54,7 @@ async function demo () {
 }
 demo()
 ```
+
 
 ## License
 MIT

@@ -2,6 +2,7 @@
   "opts": {
     "destination": "./docs",
     "package": "./package.json",
+    "readme": "./readme.md",
     "recurse": true,
     "template": "./node_modules/ink-docstrap/template",
     "pedantic": true
