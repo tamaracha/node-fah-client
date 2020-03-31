@@ -26,5 +26,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@releases/v3
         with:
           SSH: true
+          CLEAN: true
           BRANCH: gh-pages
           FOLDER: docs
