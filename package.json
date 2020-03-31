@@ -11,14 +11,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "lint": "prettier-standard --lint 'lib/**/*.js'",
-    "format": "prettier-standard 'lib/**/*.js'",
+    "lint": "standard --fix '(config|lib)/**/*.?(c|m)js'",
+    "format": "prettier '*.{json,yml,yaml}'",
     "test": "ava --tap|tap-nyc",
     "instrument": "nyc npm test",
     "docs": "jsdoc -c ./config/jsdoc.config.json",
-    "types": "tsc -p ./config/declarations.tsconfig.json",
-    "build": "npm run docs && npm run types",
-    "prepare": "npm run types"
+    "build": "tsc -p ./config/declarations.tsconfig.json",
+    "prepublishOnly": "npm run build"
   },
   "author": "",
   "license": "MIT",
