@@ -10,10 +10,7 @@
   "source": {
     "include": ["./lib"]
   },
-  "plugins": [
-    "jsdoc-plugin-typescript",
-    "./node_modules/jsdoc/plugins/markdown"
-  ],
+  "plugins": ["jsdoc-plugin-typescript"],
   "typescript": {
     "moduleRoot": "lib"
   },
