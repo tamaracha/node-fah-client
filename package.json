@@ -2,6 +2,9 @@
   "name": "fah-client",
   "version": "0.0.0",
   "description": "Connect to the remote interface of Folding@home in a programmatic manner",
+  "author": "Tamara Cook <10754072+tamaracha@users.noreply.github.com>",
+  "license": "MIT",
+  "repository": "github:tamaracha/node-fah-client",
   "main": "./dist/index.js",
   "exports": {
     ".": "./lib/index.js",
@@ -9,9 +12,9 @@
   },
   "types": "./dist/index.d.ts",
   "type": "module",
-  "private": true,
   "scripts": {
     "preversion": "npm test",
+    "version": "mate -w CHANGELOG.md && git add changelog.md",
     "postversion": "git push && git push --tags",
     "lint": "standard --fix '(config|lib)/**/*.?(c|m)js'",
     "format": "prettier '*.{json,yml,yaml}'",
@@ -21,10 +24,8 @@
     "build": "tsc -p ./config/tsconfig.node12.json",
     "prepublishOnly": "npm run build"
   },
-  "author": "",
-  "license": "MIT",
   "engine": {
-    "node": ">=10.0.0"
+    "node": ">=12.0.0"
   },
   "devDependencies": {
     "ava": "^3.5.2",
