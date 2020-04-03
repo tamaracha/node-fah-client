@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 - Publish package binaries in github releases
 
+### Fixed
+- Importing commonjs modules via default import syntax in ESM is now emitted correctly by typescript via esModuleInterop flag
+- Added some basic integration test scripts to verify that ESM version and typescript's output is working
+
 ## [0.1.0] - 2020-04-02
 ### Added
 - FahClient class that connects to the Fah interface and can process command objects. Commands can be created and stored anywhere and can be intercepted before passing them to the dispatch method of a FahClient instance.

@@ -13,15 +13,18 @@
   "types": "./dist/index.d.ts",
   "type": "module",
   "scripts": {
-    "preversion": "npm test",
+    "preversion": "npm test && npm run integration",
     "version": "mate -w CHANGELOG.md && git add changelog.md",
     "postversion": "git push && git push --tags",
     "lint": "standard --fix '(config|lib)/**/*.?(c|m)js'",
     "format": "prettier '*.{json,yml,yaml}'",
     "test": "tsc -p ./config/tsconfig.tests.json && ava --tap|tap-nyc",
     "instrument": "nyc npm test",
+    "integration:esm": "node ./integration/esm/index.mjs",
+    "integration:commonjs": "npm run build && copyfiles -f ./config/package.json ./dist/ && node ./integration/commonjs/index.cjs",
+    "integration": "npm run integration:esm && npm run integration:commonjs",
     "docs": "jsdoc -c ./config/jsdoc.config.json",
-    "build": "del dist/ && tsc -p ./config/tsconfig.node12.json && cp ./config/package.json ./dist/package.json",
+    "build": "del dist/ && tsc -p ./config/tsconfig.node12.json",
     "prepack": "npm run build"
   },
   "engine": {
@@ -31,6 +34,7 @@
     "@types/node": "^13.11.0",
     "ava": "^3.5.2",
     "babel-eslint": "^10.1.0",
+    "copyfiles": "^2.2.0",
     "del-cli": "^3.0.0",
     "husky": "^4.2.3",
     "ink-docstrap": "^1.3.2",
