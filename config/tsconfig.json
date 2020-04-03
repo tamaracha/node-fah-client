@@ -2,7 +2,8 @@
   "compilerOptions": {
     "allowJs": true,
     "checkJs": true,
-    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "importHelpers": true,
     "moduleResolution": "node",
     "types": ["node"]
   }
