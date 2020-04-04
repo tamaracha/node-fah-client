@@ -5,10 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Changed
+- Response parsing of the updates.create command: The response seems to be the first update, so it is parsed as the response type of the respective payload command
+
 ## [0.2.0] - 2020-04-04
 ### Added
-* ability to format update expressions containing whitespace (wrap them into `$()`)
-* missing updates.reset command
+- ability to format update expressions containing whitespace (wrap them into `$()`)
+- missing updates.reset command
 
 ## [0.1.1] - 2020-04-03
 ### Changed
