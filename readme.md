@@ -10,11 +10,12 @@ Fah-client is intended to be an abstraction of that string-based shell interface
 It contains helper functions and types to generate fah commands and connect to the fah interface.
 
 ## Install
+Currently this is not published to npm, but there are installable package tarballs attached to the github releases.
 Add this package to your npm project.
 Make sure you have folding@home installed and running on your system before using this package.
 
 ```sh
-npm i fah-client
+npm i https://github.com/tamaracha/node-fah-client/releases/download/v0.2.0/fah-client-0.2.0.tgz
 ```
 
 ## Usage
