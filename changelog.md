@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Update type which describes an update configuration
 
 ### Changed
-- Response parsing of the updates.create command: The response seems to be the first update, so it is parsed as the response type of the respective payload command
+- Response parsing of the updates.list command: the message is parsed from tsv into an array of update description objects. Maybe this will be merged with the Update type.
+- Response parsing of the updates.create command: The response seems to be the first update value, so it is parsed as the response type of the respective payload command
 - The updates.create function now expects an object of type Update
 
 ## [0.2.0] - 2020-04-04
