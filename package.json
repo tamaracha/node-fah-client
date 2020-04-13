@@ -16,7 +16,7 @@
     "preversion": "npm test && npm run integration",
     "version": "mate -w CHANGELOG.md && git add changelog.md",
     "postversion": "git push && git push --tags",
-    "lint": "standard --fix '(config|lib)/**/*.?(c|m)js'",
+    "lint": "standard --fix '{config,lib}/**/*.?(c|m)js'",
     "format": "prettier '*.{json,yml,yaml}'",
     "pretest": "tsc -p ./config/tsconfig.tests.json",
     "test": "ava --tap|tap-nyc",
