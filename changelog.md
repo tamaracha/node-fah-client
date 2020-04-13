@@ -6,6 +6,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### Added
+- Tokenizer which splits telnet-emitted messages up into parts/tokens (prompt, text, or PyON).
+- Tokenizing augments the command specific parsing and will maybe replace it
 - Each created command gets a unique id assigned via counter.
 
 ## [0.3.0]
