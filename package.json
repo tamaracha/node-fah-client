@@ -52,7 +52,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "fah-pyon": "https://github.com/tamaracha/node-fah-pyon/releases/download/v1.3.0/fah-pyon-1.3.0.tgz",
+    "fah-pyon": "file:../pyon/fah-pyon-1.3.0.tgz",
     "telnet-client": "^1.4.0"
   },
   "peerdependencies": {
