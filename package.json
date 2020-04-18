@@ -6,12 +6,20 @@
   "license": "MIT",
   "repository": "github:tamaracha/node-fah-client",
   "main": "./dist/index.js",
+  "type": "module",
   "exports": {
-    ".": "./lib/index.js",
-    "./commands": "./lib/commands/index.js"
+    "import": {
+      ".": "./lib/index.js",
+      "./commands": "./lib/commands/index.js",
+      "./helpers": "./lib/helpers/index.js"
+    },
+    "require": {
+      ".": "./dist/index.js",
+      "./commands": "./dist/commands/index.js",
+      "./helpers": "./dist/helpers/index.js"
+    }
   },
   "types": "./dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "preversion": "npm test && npm run integration",
     "version": "mate -w CHANGELOG.md && git add changelog.md",
@@ -52,7 +60,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "fah-pyon": "file:../pyon/fah-pyon-1.3.0.tgz",
+    "fah-pyon": "https://github.com/tamaracha/node-fah-pyon/releases/download/v1.4.0/fah-pyon-1.4.0.tgz",
     "telnet-client": "^1.4.0"
   },
   "peerdependencies": {
