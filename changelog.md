@@ -5,6 +5,13 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Breaking
+- Tokenizer does not return its own Token type anymore, but Message objects from fah-pyon, or of type prompt or empty.
+
+### Changed
+- updated fah-pyon to the newest nearley-based version
+- The FahClient class becomes less important. It acts as an example client implementation. Tokenizer can be used in conjunction with any socket connection for response message parsing. I have successfully implemented an rxjs-based client using tokenizer for another project.
+
 ## [0.4.0] - 2020-04-13
 ### Added
 - Tokenizer which splits telnet-emitted messages up into parts/tokens (prompt, text, or PyON).
