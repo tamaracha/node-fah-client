@@ -5,6 +5,9 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- missing status field in Slot type
+
 ## [0.5.0] - 2020-04-19
 ### Breaking
 - Tokenizer does not return its own Token type anymore, but Message objects from fah-pyon, or of type prompt or empty.
