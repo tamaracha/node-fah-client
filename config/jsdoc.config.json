@@ -3,9 +3,10 @@
     "destination": "./docs",
     "package": "./package.json",
     "readme": "./readme.md",
+    "pedantic": true,
+    "access": "public",
     "recurse": true,
-    "template": "./node_modules/ink-docstrap/template",
-    "pedantic": true
+    "template": "./node_modules/ink-docstrap/template"
   },
   "source": {
     "include": ["./lib"]
