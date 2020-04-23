@@ -33,21 +33,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-commands_command.html">commands/command</a></li><li><a href="module-commands_control.html">commands/control</a></li><li><a href="module-commands_options.html">commands/options</a></li><li><a href="module-commands_slots.html">commands/slots</a></li><li><a href="module-commands_updates.html">commands/updates</a></li><li><a href="module-commands_work.html">commands/work</a></li><li><a href="module-errors.html">errors</a></li><li><a href="module-fah-client.html">fah-client</a></li><li><a href="module-helpers_tokenizer.html">helpers/tokenizer</a></li><li><a href="module-index.html">index</a></li>
+					<li><a href="module-commands_command.html">commands/command</a></li><li><a href="module-commands_control.html">commands/control</a></li><li><a href="module-commands_helpers_tokenizer.html">commands/helpers/tokenizer</a></li><li><a href="module-commands_options.html">commands/options</a></li><li><a href="module-commands_slots.html">commands/slots</a></li><li><a href="module-commands_updates.html">commands/updates</a></li><li><a href="module-commands_work.html">commands/work</a></li><li><a href="module-helpers_tokenizer.html">helpers/tokenizer</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-commands_command.Command.html">commands/command.Command</a></li><li><a href="module-errors.CommandError.html">errors.CommandError</a></li><li><a href="module-errors.ReportedError.html">errors.ReportedError</a></li><li><a href="module-errors.ResponseMismatchError.html">errors.ResponseMismatchError</a></li><li><a href="module-fah-client.FahClient.html">fah-client.FahClient</a></li><li><a href="module-helpers_tokenizer.Tokenizer.html">helpers/tokenizer.Tokenizer</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="global.html#counter">counter</a></li>
+					<li><a href="module-commands_command-Command.html">commands/command~Command</a></li><li><a href="module-commands_helpers_tokenizer-Tokenizer.html">commands/helpers/tokenizer~Tokenizer</a></li><li><a href="module-helpers_tokenizer-Tokenizer.html">helpers/tokenizer~Tokenizer</a></li>
 				</ul>
 			</li>
 			
@@ -85,7 +78,7 @@
 <header>
     
         <h2>
-            <span class="ancestors"><a href="module-commands_command.html">commands/command</a>.</span>
+            <span class="ancestors"><a href="module-commands_command.html">commands/command</a>~</span>
         
         Command
         </h2>
@@ -102,19 +95,203 @@
         
 <hr>
 <dt>
-    <h4 class="name" id="Command"><span class="type-signature"></span>new Command()</h4>
+    <h4 class="name" id="Command"><span class="type-signature"></span>new Command(type, text [, responseType] [, parse])</h4>
     
     
 </dt>
 <dd>
 
     
-
+    <div class="description">
+        Create a Command
+    </div>
     
 
     
 
     
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>type</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Identifies the unique command type, e.g., [options] list.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>text</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">The serialized command which can be passed to the telnet fah interface.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>responseType</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    empty
+                
+                </td>
+            
+
+            <td class="description last">Indicates the object type of the response message if the response is in pyon serialization format.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>parse</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">ParseCallback</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                </td>
+            
+
+            <td class="description last">Can be used to parse the response if a non-PyON token is found. ResponseType must be "none" for this to take place.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
     
 
     
@@ -191,6 +368,346 @@
         <h3 class="subsection-title">Methods</h3>
 
         <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="findResponseFromString"><span class="type-signature"></span>findResponseFromString(str [, tokenizer])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tokenize a string and try to find a response message in the resulting tokens
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>str</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>tokenizer</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">module:commands/helpers/index~Tokenizer</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">R</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="findResponseFromTokens"><span class="type-signature"></span>findResponseFromTokens(tokens)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Try to find a response message in the given tokens
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>tokens</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;module:fah-pyon~Message></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">R</span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
             
 <hr>
 <dt>
@@ -334,154 +851,6 @@
     
 </dd>
 
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id="parse"><span class="type-signature"></span>parse(str)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Parse a response message
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>str</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">R</span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
         </dl>
     
 
@@ -532,7 +901,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a>
 	
-		on 2020-04-20T14:43:37+00:00
+		on 2020-04-23T11:10:42+00:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

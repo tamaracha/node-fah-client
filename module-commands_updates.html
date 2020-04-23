@@ -33,21 +33,14 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-commands_command.html">commands/command</a></li><li><a href="module-commands_control.html">commands/control</a></li><li><a href="module-commands_options.html">commands/options</a></li><li><a href="module-commands_slots.html">commands/slots</a></li><li><a href="module-commands_updates.html">commands/updates</a></li><li><a href="module-commands_work.html">commands/work</a></li><li><a href="module-errors.html">errors</a></li><li><a href="module-fah-client.html">fah-client</a></li><li><a href="module-helpers_tokenizer.html">helpers/tokenizer</a></li><li><a href="module-index.html">index</a></li>
+					<li><a href="module-commands_command.html">commands/command</a></li><li><a href="module-commands_control.html">commands/control</a></li><li><a href="module-commands_helpers_tokenizer.html">commands/helpers/tokenizer</a></li><li><a href="module-commands_options.html">commands/options</a></li><li><a href="module-commands_slots.html">commands/slots</a></li><li><a href="module-commands_updates.html">commands/updates</a></li><li><a href="module-commands_work.html">commands/work</a></li><li><a href="module-helpers_tokenizer.html">helpers/tokenizer</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-commands_command.Command.html">commands/command.Command</a></li><li><a href="module-errors.CommandError.html">errors.CommandError</a></li><li><a href="module-errors.ReportedError.html">errors.ReportedError</a></li><li><a href="module-errors.ResponseMismatchError.html">errors.ResponseMismatchError</a></li><li><a href="module-fah-client.FahClient.html">fah-client.FahClient</a></li><li><a href="module-helpers_tokenizer.Tokenizer.html">helpers/tokenizer.Tokenizer</a></li>
-				</ul>
-			</li>
-			
-			<li class="dropdown">
-				<a href="global.html" class="dropdown-toggle" data-toggle="dropdown">Global<b class="caret"></b></a>
-				<ul class="dropdown-menu ">
-					<li><a href="global.html#counter">counter</a></li>
+					<li><a href="module-commands_command-Command.html">commands/command~Command</a></li><li><a href="module-commands_helpers_tokenizer-Tokenizer.html">commands/helpers/tokenizer~Tokenizer</a></li><li><a href="module-helpers_tokenizer-Tokenizer.html">helpers/tokenizer~Tokenizer</a></li>
 				</ul>
 			</li>
 			
@@ -147,17 +140,20 @@
     
 
     
-        <h3 class="subsection-title">Members</h3>
+
+    
+        <h3 class="subsection-title">Methods</h3>
 
         <dl>
             
 <hr>
-<dt class="name" id=".clear">
-    <h4 id=".clear"><span class="type-signature">&lt;static, constant> </span>clear<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id=".clear"><span class="type-signature">&lt;static> </span>clear()</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         Create a new command to clear the full updates list
@@ -167,6 +163,11 @@
     
 
     
+
+    
+    
+
+    
 <dl class="details">
     
 
@@ -207,264 +208,54 @@
 
 
     
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;null></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
 </dd>
 
         
             
 <hr>
-<dt class="name" id=".create">
-    <h4 id=".create"><span class="type-signature">&lt;static, constant> </span>create<span class="type-signature"></span></h4>
-
+<dt>
+    <h4 class="name" id=".create"><span class="type-signature">&lt;static> </span>create(update)</h4>
+    
     
 </dt>
 <dd>
+
     
     <div class="description">
         Create a new command to add a new update
     </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id=".destroy">
-    <h4 id=".destroy"><span class="type-signature">&lt;static, constant> </span>destroy<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Create a new command to remove one update from the updates list
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id=".list">
-    <h4 id=".list"><span class="type-signature">&lt;static, constant> </span>list<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Create a new command to list all updates
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt class="name" id=".reset">
-    <h4 id=".reset"><span class="type-signature">&lt;static, constant> </span>reset<span class="type-signature"></span></h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        Create a new command to reset all updates
-    </div>
-    
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="~parseUpdates"><span class="type-signature">&lt;inner> </span>parseUpdates(message)</h4>
-    
-    
-</dt>
-<dd>
-
     
 
     
@@ -498,13 +289,13 @@
 
         <tr>
             
-                <td class="name"><code>message</code></td>
+                <td class="name"><code>update</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type">string</span>
+<span class="param-type"><a href="module-commands_updates.html#~Update">module:commands/updates~Update</a>.&lt;R></span>
 
 
 
@@ -515,7 +306,159 @@
 
             
 
-            <td class="description last">A list of updates as rectangular space separated values</td>
+            <td class="description last">The configuration for the new update</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The first update value
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;R></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".destroy"><span class="type-signature">&lt;static> </span>destroy(id)</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Create a new command to remove one update from the updates list
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The id of an update</td>
         </tr>
 
     
@@ -586,7 +529,203 @@
     </dt>
     <dd>
         
-<span class="param-type">Array.&lt;<a href="module-commands_updates.html#~UpdateDescription">module:commands/updates~UpdateDescription</a>></span>
+<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;null></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".list"><span class="type-signature">&lt;static> </span>list()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Create a new command to list all updates
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;Array.&lt;<a href="module-commands_updates.html#~UpdateDescription">module:commands/updates~UpdateDescription</a>>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id=".reset"><span class="type-signature">&lt;static> </span>reset()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Create a new command to reset all updates
+    </div>
+    
+
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;null></span>
 
 
 
@@ -606,6 +745,178 @@
         <h3 class="subsection-title">Type Definitions</h3>
 
         <dl>
+                
+<hr>
+<dt class="name" id="~Update">
+    <h4 id="~Update">Update</h4>
+
+    
+</dt>
+<dd>
+    
+    <div class="description">
+        An update configuration object
+    </div>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">object</span>
+
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+    
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    <dl>
+
+<table class="props table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>id</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">unique id number</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>rate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The minimal distance in seconds between subsequent update messages</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>payload</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;R></span>
+
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The command to be evaluated</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+</dl>
+
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+            
                 
 <hr>
 <dt class="name" id="~UpdateDescription">
@@ -821,7 +1132,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a>
 	
-		on 2020-04-20T14:43:37+00:00
+		on 2020-04-23T11:10:42+00:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>
