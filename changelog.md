@@ -5,8 +5,16 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### changed
+- moved everything related to serializing and parsing fah commands to the commands submodule. Next to that will be a higher-level client submodule which makes use of the commands module. Users can decide which level they need.
+
 ### Added
 - missing status field in Slot type
+- Command class can find response either from tokens or from string and optionally given tokenizer
+- ability to create commands with custom parse callback to parse non-pyon responses
+
+### Removed
+- id field from Command class because tracking a command's id is more a client matter than of serializing and parsing
 
 ## [0.5.0] - 2020-04-19
 ### Breaking
