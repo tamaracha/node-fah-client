@@ -11,12 +11,12 @@
     "import": {
       ".": "./lib/index.js",
       "./commands": "./lib/commands/index.js",
-      "./helpers": "./lib/helpers/index.js"
+      "./client": "./lib/client/index.js"
     },
     "require": {
       ".": "./dist/index.js",
       "./commands": "./dist/commands/index.js",
-      "./helpers": "./dist/helpers/index.js"
+      "./client": "./dist/client/index.js"
     }
   },
   "types": "./dist/index.d.ts",
@@ -61,7 +61,6 @@
   },
   "dependencies": {
     "fah-pyon": "https://github.com/tamaracha/node-fah-pyon/releases/download/v1.4.2/fah-pyon-1.4.2.tgz",
-    "telnet-client": "^1.4.0",
     "tslib": "^1.11.1"
   },
   "files": [
