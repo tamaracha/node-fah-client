@@ -60,7 +60,7 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "fah-pyon": "https://github.com/tamaracha/node-fah-pyon/releases/download/v1.4.2/fah-pyon-1.4.2.tgz",
+    "fah-pyon": "https://github.com/tamaracha/node-fah-pyon/releases/download/v1.4.3/fah-pyon-1.4.3.tgz",
     "tslib": "^1.11.1"
   },
   "files": [

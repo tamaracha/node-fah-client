@@ -13,6 +13,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Command class can find response either from tokens or from string and optionally given tokenizer
 - ability to create commands with custom parse callback to parse non-pyon responses
 
+### Fixed
+- parsing of simulation-info messages (failed because dashes were not allowed in message name)
+
 ### Removed
 - id field from Command class because tracking a command's id is more a client matter than of serializing and parsing
 
