@@ -1,53 +1,76 @@
 # fah-client
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
-The Folding@home project's background program (FahClient) provides a telnet-based [third party client interface](https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API) for client programs to monitor the current folding status.
-This interface is meant to be used by other software and humans as well, which results in an API that feels more like a shell frontend.
+The Folding@home project's background program (FahClient) provides a telnet-based [third party client interface] for client programs to monitor the current folding status.
+This interface is meant to be used by other software as well as by humans, which results in an API that feels more like a shell frontend.
 A client program must generate syntactically correct string commands and parse the responses coming from FahClient.
-Partially, the responses are serialized in a data serialization format called PYON (wtf).
-PYON parsing is done by my [fah-pyon package](https://github.com/tamaracha/node-fah-pyon).
+Partially, the responses are serialized in a data serialization format called PYON.
+PYON parsing is done by my [fah-pyon package].
 Fah-client is intended to be an abstraction of that string-based shell interface for node.js.
 It contains helper functions and types to generate fah commands and connect to the fah interface.
 
 ## Install
 Currently this is not published to npm, but there are installable package tarballs attached to the github releases.
-Add this package to your npm project.
+Add the [current release package] to your npm project.
 Make sure you have folding@home installed and running on your system before using this package.
 
 ```sh
-npm i https://github.com/tamaracha/node-fah-client/releases/download/v0.2.0/fah-client-0.2.0.tgz
+npm i https://github.com/tamaracha/node-fah-client/releases/download/v<version>/fah-client-<version>.tgz
 ```
 
 ## Usage
-The central part of this package is the `FahClient` class.
-It communicates with the FahClient program and can receive Command objects.
+The package consists of some subpackages:
+
+- fah-client/commands handles the raw telnet input and output strings and contains the logic for command serialization and response parsing.
+- fah-client/client contains the `FahClient` class which connects to the fah interface and utilizes fah-client/commands for the string processing work. Users can implement their own client around the commands subpackage.
+
+### Commands and parsing
+The commands subpackage is built around the `Command` and `Tokenizer` class.
 A command contains a textual input representation for the fah interface and information about the expected response type.
 Users of this package are not supposed to create these Command objects manually, but should use the factory methods provided in this package.
+
+`Tokenizer` splits an output string from the fah interface into a sequence of objects (tokens) that fulfill the Message type in the [fah-pyon package].
+Clients can operate on this token stream without having to care about strings.
+Most responses are either PyON messages or empty strings, so tokens can be one of the following:
+
+- PyON messages output by fah-pyon's `safeLoad` function
+- empty response messages: `{ type: 'empty', payload: null }`
+- prompts: `{ type: 'prompt', payload: '\n> ' }`
+
+### Client usage
 A FahClient instance inputs the command text to the fah interface and tries to parse the response.
-Please view the [API docs](https://tamaracha.github.io/node-fah-client) for usage details.
+It emits the tokens as token event, and tokens that are not part of a command response as message event.
 
 ```node
 /** demo.mjs */
 'use strict'
+// ESM or typescript
 import { FahClient, work } from 'fah-client'
+// or commonjs
+// const { FahClient, work } = require('fah-client')
 
 // create commands for getting units and simulation info
-const cmd1 = work.units()
-const cmd2 = work.simulation(0)
+const unitsCmd = work.units()
+const simulationCmd = work.simulation(0)
 
 async function demo () {
-  const fah = new FahClient()
   try {
-  // connect to the fah interface
-  await fah.connect()
+  // connect to the fah interface and display the welcome message
+    const { fah, init } = await fah.connect()
+    console.log(init)
     // if connected, fetch units in queue
-  const units = await fah.dispatch(cmd1)
-  console.log(units)
+    const units = await fah.dispatch(unitsCmd)
+    console.log(units)
     // Fetch simulation data in slot 0 …
-  const simulation = await fah.dispatch(cmd2)
-  console.log(simulation)
-  // After work is done, disconnect from fah interface
-  await fah.disconnect()
+    const simulation = await fah.dispatch(simulationCmd)
+    console.log(simulation)
+    // FahClient takes care of sending commands sequentially, so dispatch can be called synchronously
+    await Promise.all([
+      fah.dispatch(unitsCmd)
+      fah.dispatch(simulationCmd)
+    ]).then(([unit, simulation]) => console.log(unit, simulation))
+    // After work is done, disconnect from fah interface
+    await fah.disconnect()
     console.log('Goodbye')
   } catch (e) {
     console.log(e)
@@ -56,6 +79,13 @@ async function demo () {
 demo()
 ```
 
+## Docs
+[API docs]
 
 ## License
 MIT
+
+[current release package]: https://github.com/tamaracha/node-fah-client/releases/download/v0.5.0/fah-client-0.5.0.tgz
+[API docs]: https://tamaracha.github.io/node-fah-client
+[third party client interface]: https://github.com/FoldingAtHome/fah-control/wiki/3rd-party-FAHClient-API
+[fah-pyon package]: https://github.com/tamaracha/node-fah-pyon
