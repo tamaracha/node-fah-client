@@ -7,7 +7,8 @@ const cmd = control.heartbeat()
 async function demo () {
   try {
   // connect to the fah interface
-  const { fah, init } = await FahClient.connect()
+  const fah = await FahClient.connect()
+    fah.once('ready', init => console.log('init: ', init))
   const heartbeat = await fah.dispatch(cmd)
   console.log(heartbeat)
   // After work is done, disconnect from fah interface
