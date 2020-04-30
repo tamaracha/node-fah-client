@@ -57,12 +57,12 @@
     "snazzy": "^8.0.0",
     "standard": "^14.3.3",
     "tap-nyc": "^1.0.3",
-    "typed-emitter": "^1.0.0",
     "typescript": "^3.8.3"
   },
   "dependencies": {
     "fah-pyon": "https://github.com/tamaracha/node-fah-pyon/releases/download/v1.4.3/fah-pyon-1.4.3.tgz",
-    "tslib": "^1.11.1"
+    "tslib": "^1.11.1",
+    "typed-emitter": "^1.0.0"
   },
   "files": [
     "lib/**/!(*.spec).?(c|m)js",
