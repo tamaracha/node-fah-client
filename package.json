@@ -33,9 +33,9 @@
     "integration:commonjs": "npm run build && node ./integration/commonjs/index.cjs",
     "integration": "npm run integration:esm && npm run integration:commonjs",
     "docs": "jsdoc -c ./config/jsdoc.config.json",
-    "prebuild": "rm -Rf dist/",
+    "prebuild": "shx rm -Rf dist/",
     "build": "tsc -p ./config/tsconfig.node12.json",
-    "postbuild": "cp ./config/package.json ./dist/",
+    "postbuild": "shx cp ./config/package.json ./dist/",
     "prepack": "npm run build"
   },
   "engine": {

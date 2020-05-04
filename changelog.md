@@ -6,17 +6,21 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 ### changed
-- moved everything related to serializing and parsing fah commands to the commands submodule. Next to that will be a higher-level client submodule which makes use of the commands module. Users can decide which level they need.
+- moved everything related to serializing and parsing fah commands to the commands subpackage and everything related to fah communication to the client subpackage.
 - FahClient is implemented using net.Socket and events.EventEmitter (removed telnet-client dependency).
+- FahClient uses the transform stream created by tokenizer.getTokenStream and operates on a stream of tokens at the readable side.
 - new FahClient instances are created through the static FahClient.connect method
+- Split fahClient.disconnect method into .end and .destroy methods
+- Renamed tokenizer.tokenize to tokenizer.getTokens
 
 ### Added
+- tokenizer.getTokenStream method which creates a transform stream to convert a stream of telnet messages to tokens
 - missing status field in Slot type
 - Command class can find response either from tokens or from string and optionally given tokenizer
 - ability to create commands with custom parse callback to parse non-pyon responses
-- FahClient takes care of sequential command execution
 
 ### Fixed
+- FahClient takes care of sequential command execution
 - parsing of simulation-info messages (failed because dashes were not allowed in message name)
 - types of Command.emptyCommand and Command.customCommand methods
 
