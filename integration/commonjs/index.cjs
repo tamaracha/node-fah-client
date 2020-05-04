@@ -12,7 +12,7 @@ async function demo () {
   const heartbeat = await fah.dispatch(cmd)
   console.log(heartbeat)
   // After work is done, disconnect from fah interface
-  await fah.disconnect()
+  await fah.end()
     console.log('Goodbye')
   } catch (e) {
     console.log(e)
