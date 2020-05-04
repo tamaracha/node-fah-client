@@ -17,6 +17,6 @@ async function demo () {
   }
   const list = await fc.dispatch(updates.list())
   console.log(list)
-  // await fc.disconnect()
+  await fc.end()
 }
 demo()
