@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Class: Tokenizer</title>
+	<title>Documentation Module: client/fah-client</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,14 +33,21 @@
 			<li class="dropdown">
 				<a href="modules.list.html" class="dropdown-toggle" data-toggle="dropdown">Modules<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-commands_command.html">commands/command</a></li><li><a href="module-commands_control.html">commands/control</a></li><li><a href="module-commands_helpers_tokenizer.html">commands/helpers/tokenizer</a></li><li><a href="module-commands_options.html">commands/options</a></li><li><a href="module-commands_slots.html">commands/slots</a></li><li><a href="module-commands_updates.html">commands/updates</a></li><li><a href="module-commands_work.html">commands/work</a></li><li><a href="module-helpers_tokenizer.html">helpers/tokenizer</a></li>
+					<li><a href="module-client_fah-client.html">client/fah-client</a></li><li><a href="module-commands_command.html">commands/command</a></li><li><a href="module-commands_control.html">commands/control</a></li><li><a href="module-commands_helpers_tokenizer.html">commands/helpers/tokenizer</a></li><li><a href="module-commands_options.html">commands/options</a></li><li><a href="module-commands_slots.html">commands/slots</a></li><li><a href="module-commands_updates.html">commands/updates</a></li><li><a href="module-commands_work.html">commands/work</a></li>
 				</ul>
 			</li>
 			
 			<li class="dropdown">
 				<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b class="caret"></b></a>
 				<ul class="dropdown-menu ">
-					<li><a href="module-commands_command-Command.html">commands/command~Command</a></li><li><a href="module-commands_helpers_tokenizer-Tokenizer.html">commands/helpers/tokenizer~Tokenizer</a></li><li><a href="module-helpers_tokenizer-Tokenizer.html">helpers/tokenizer~Tokenizer</a></li>
+					<li><a href="module-client_fah-client-FahClient.html">client/fah-client~FahClient</a></li><li><a href="module-commands_command-Command.html">commands/command~Command</a></li><li><a href="module-commands_helpers_tokenizer-Tokenizer.html">commands/helpers/tokenizer~Tokenizer</a></li>
+				</ul>
+			</li>
+			
+			<li class="dropdown">
+				<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b class="caret"></b></a>
+				<ul class="dropdown-menu ">
+					<li><a href="module-client_fah-client-FahClient.html#event:message">client/fah-client~FahClient#event:message</a></li><li><a href="module-client_fah-client-FahClient.html#event:ready">client/fah-client~FahClient#event:ready</a></li>
 				</ul>
 			</li>
 			
@@ -72,19 +79,10 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Class: Tokenizer</h1>
+	<h1 class="page-title">Module: client/fah-client</h1>
 <section>
 
 <header>
-    
-        <h2>
-            <span class="ancestors"><a href="module-helpers_tokenizer.html">helpers/tokenizer</a>~</span>
-        
-        Tokenizer
-        </h2>
-        
-            <div class="class-description">Split telnet messages into tokens</div>
-        
     
 </header>
 
@@ -93,94 +91,8 @@
     <div class="container-overview">
     
         
-<hr>
-<dt>
-    <h4 class="name" id="Tokenizer"><span class="type-signature"></span>new Tokenizer( [prompt])</h4>
-    
-    
-</dt>
-<dd>
-
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
 
         
-        <th>Argument</th>
-        
-
-        
-        <th>Default</th>
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>prompt</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-                    &lt;optional><br>
-                
-
-                
-
-                
-                </td>
-            
-
-            
-                <td class="default">
-                
-                    "\r\n"
-                
-                </td>
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
 <dl class="details">
     
 
@@ -220,21 +132,7 @@
 </dl>
 
 
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-</dd>
-
+        
     
     </div>
 
@@ -243,169 +141,20 @@
     
 
     
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
+        <h3 class="subsection-title">Classes</h3>
 
         <dl>
-            
-<hr>
-<dt>
-    <h4 class="name" id="tokenize"><span class="type-signature"></span>tokenize(msg)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Splits a string from telnet into a sequence of messages and prompts
-    </div>
-    
-
-    
-
-    
-
-    
-    
-        <h5>Parameters:</h5>
-        
-
-<table class="params table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>msg</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">A telnet response to parse</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-<div class="param-desc">
-    An array of messages which can be of type empty, prompt, or were produced by fah-pyon's safeLoad function
-</div>
-
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type">Array.&lt;module:fah-pyon~Message></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
+            <dt><a href="module-client_fah-client-FahClient.html">FahClient</a></dt>
+            <dd></dd>
         </dl>
+    
+
+    
+
+    
+
+    
+
     
 
     
@@ -455,7 +204,7 @@
 <span class="jsdoc-message">
 	Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.6.4</a>
 	
-		on 2020-04-23T11:10:42+00:00
+		on 2020-05-04T16:47:11+00:00
 	
 	using the <a href="https://github.com/docstrap/docstrap">DocStrap template</a>.
 </span>

@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width">
-	<title>Documentation Module: commands/updates</title>
+	<title>Documentation Class: FahClient</title>
 
 	<!--[if lt IE 9]>
 	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -79,10 +79,19 @@
 		<div id="main">
 			
 
-	<h1 class="page-title">Module: commands/updates</h1>
+	<h1 class="page-title">Class: FahClient</h1>
 <section>
 
 <header>
+    
+        <h2>
+            <span class="ancestors"><a href="module-client_fah-client.html">client/fah-client</a>~</span>
+        
+        FahClient
+        </h2>
+        
+            <div class="class-description">Represents a basic connection to the Fah telnet interface that is used to send commands and listen to data events</div>
+        
     
 </header>
 
@@ -91,71 +100,9 @@
     <div class="container-overview">
     
         
-
-        
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-        
-    
-    </div>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-        <h3 class="subsection-title">Methods</h3>
-
-        <dl>
-            
 <hr>
 <dt>
-    <h4 class="name" id=".clear"><span class="type-signature">&lt;static> </span>clear()</h4>
+    <h4 class="name" id="FahClient"><span class="type-signature"></span>new FahClient(socket)</h4>
     
     
 </dt>
@@ -163,105 +110,7 @@
 
     
     <div class="description">
-        Create a new command to clear the full updates list
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;null></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".create"><span class="type-signature">&lt;static> </span>create(update)</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Create a new command to add a new update
+        Create a new client
     </div>
     
 
@@ -296,13 +145,13 @@
 
         <tr>
             
-                <td class="name"><code>update</code></td>
+                <td class="name"><code>socket</code></td>
             
 
             <td class="type">
             
                 
-<span class="param-type"><a href="module-commands_updates.html#~Update">module:commands/updates~Update</a>.&lt;R></span>
+<span class="param-type">module:net~Socket</span>
 
 
 
@@ -313,7 +162,273 @@
 
             
 
-            <td class="description last">The configuration for the new update</td>
+            <td class="description last">A tcp socket connection</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<hr>
+<dt class="name" id="events">
+    <h4 id="events"><span class="type-signature"></span>events<span class="type-signature"></span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+        <h3 class="subsection-title">Methods</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id=".connect"><span class="type-signature">&lt;static> </span>connect( [port] [, host])</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Connect to the fah interface and create a new fah client
+    </div>
+    
+
+    
+
+    
+
+    
+    
+        <h5>Parameters:</h5>
+        
+
+<table class="params table table-striped">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Argument</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>port</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    36330
+                
+                </td>
+            
+
+            <td class="description last">The socket port to connect to</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>host</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "127.0.0.1"
+                
+                </td>
+            
+
+            <td class="description last">The socket host to connect to</td>
         </tr>
 
     
@@ -377,7 +492,7 @@
     
             
 <div class="param-desc">
-    The first update value
+    A promise resolved to the connected fah client
 </div>
 
 
@@ -388,7 +503,7 @@
     </dt>
     <dd>
         
-<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;null></span>
+<span class="param-type">Promise.&lt;<a href="module-client_fah-client-FahClient.html">module:client/fah-client~FahClient</a>></span>
 
 
 
@@ -405,7 +520,7 @@
             
 <hr>
 <dt>
-    <h4 class="name" id=".destroy"><span class="type-signature">&lt;static> </span>destroy(id)</h4>
+    <h4 class="name" id="dispatch"><span class="type-signature"></span>dispatch(cmd)</h4>
     
     
 </dt>
@@ -413,7 +528,7 @@
 
     
     <div class="description">
-        Create a new command to remove one update from the updates list
+        Send a new command, wait until previously sent commands are processed
     </div>
     
 
@@ -448,416 +563,7 @@
 
         <tr>
             
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The id of an update</td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;null></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".list"><span class="type-signature">&lt;static> </span>list()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Create a new command to list all updates
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;Array.&lt;<a href="module-commands_updates.html#~UpdateDescription">module:commands/updates~UpdateDescription</a>>></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        
-            
-<hr>
-<dt>
-    <h4 class="name" id=".reset"><span class="type-signature">&lt;static> </span>reset()</h4>
-    
-    
-</dt>
-<dd>
-
-    
-    <div class="description">
-        Create a new command to reset all updates
-    </div>
-    
-
-    
-
-    
-
-    
-    
-
-    
-<dl class="details">
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-    <h5>Returns:</h5>
-    
-            
-
-
-<dl>
-    <dt>
-        Type
-    </dt>
-    <dd>
-        
-<span class="param-type"><a href="module-commands_command-Command.html">module:commands/command~Command</a>.&lt;null></span>
-
-
-
-    </dd>
-</dl>
-
-
-        
-
-    
-</dd>
-
-        </dl>
-    
-
-    
-        <h3 class="subsection-title">Type Definitions</h3>
-
-        <dl>
-                
-<hr>
-<dt class="name" id="~Update">
-    <h4 id="~Update">Update</h4>
-
-    
-</dt>
-<dd>
-    
-    <div class="description">
-        An update configuration object
-    </div>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">object</span>
-
-
-
-            </li>
-        </ul>
-    
-
-    
-<dl class="details">
-    
-
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">unique id number</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>rate</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last">The minimal distance in seconds between subsequent update messages</td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>payload</code></td>
+                <td class="name"><code>cmd</code></td>
             
 
             <td class="type">
@@ -874,184 +580,19 @@
 
             
 
-            <td class="description last">The command to be evaluated</td>
+            <td class="description last">The command to be sent</td>
         </tr>
 
     
     </tbody>
 </table>
-</dl>
 
-    
-
-	
-
-	
-
-	
-
-    
-
-    
-
-    
-
-    
-
-	
-
-	
-
-	
-
-	
-
-	
-
-
-
-	
-
-	
-
-	
-
-	
-</dl>
-
-
-    
-</dd>
-
-            
-                
-<hr>
-<dt class="name" id="~UpdateDescription">
-    <h4 id="~UpdateDescription">UpdateDescription</h4>
-
-    
-</dt>
-<dd>
-    
-
-    
-        <h5>Type:</h5>
-        <ul>
-            <li>
-                
-<span class="param-type">object</span>
-
-
-
-            </li>
-        </ul>
     
 
     
 <dl class="details">
     
 
-    <h5 class="subsection-title">Properties:</h5>
-
-    <dl>
-
-<table class="props table table-striped">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>id</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>rate</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">number</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>expression</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-</dl>
-
-    
-
 	
 
 	
@@ -1087,13 +628,325 @@
 	
 </dl>
 
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    A promise that resolves to the command's response
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;R></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
 
     
 </dd>
 
-            </dl>
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="end"><span class="type-signature"></span>end()</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Half-close the connection to the fah interface by calling socket.end
+    </div>
     
 
+    
+
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <h5>Returns:</h5>
+    
+            
+<div class="param-desc">
+    The forwarded end event from the socket
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Promise.&lt;Array.&lt;void>></span>
+
+
+
+    </dd>
+</dl>
+
+
+        
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+        <h3 class="subsection-title">Events</h3>
+
+        <dl>
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:message">message</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        Tokens that are not part of a command response
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">module:client/fah-client~Message</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        
+            
+<hr>
+<dt>
+    <h4 class="name" id="event:ready">ready</h4>
+    
+    
+</dt>
+<dd>
+
+    
+    <div class="description">
+        The initial welcome string printed by the fah interface after connection is established
+    </div>
+    
+
+    
+
+    
+        <h5>Type: 
+<span class="param-type">string</span>
+
+
+</h5>
+    
+
+    
+    
+
+    
+<dl class="details">
+    
+
+	
+
+	
+
+	
+
+    
+
+    
+
+    
+
+    
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</dd>
+
+        </dl>
     
 </article>
 
