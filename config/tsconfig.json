@@ -4,6 +4,7 @@
     "checkJs": true,
     "esModuleInterop": true,
     "importHelpers": true,
+    "baseUrl": "../",
     "moduleResolution": "node"
   }
 }
