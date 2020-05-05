@@ -1,6 +1,6 @@
 {
   "name": "fah-client",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Connect to the remote interface of Folding@home in a programmatic manner",
   "author": "Tamara Cook <10754072+tamaracha@users.noreply.github.com>",
   "license": "MIT",
