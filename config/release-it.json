@@ -1,0 +1,19 @@
+{
+  "hooks": {
+    "before:init": [
+      "npm run lint",
+      "npm test",
+      "npm run instrument",
+      "npm run integration"
+    ]
+  },
+  "github": {
+    "release": true
+  },
+  "plugins": {
+    "@release-it/keep-a-changelog": {
+      "filename": "CHANGELOG.md",
+      "addVersionUrl": true
+    }
+  }
+}
