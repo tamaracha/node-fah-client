@@ -5,9 +5,7 @@
     "lib": ["es2020"],
     "module": "commonjs",
     "outDir": "../dist",
-    "declaration": true,
-    "strict": true,
-    "removeComments": true
-  },
-  "files": ["../lib/index.js"]
+    "importHelpers": true,
+    "declaration": false
+  }
 }

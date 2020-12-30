@@ -1,10 +1,16 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Changed
+
+- Migrated to typescript 4.x
+
 ## [0.6.1] - 2020-05-05
 ### Fixed
 - typescript declarations of FahClient: node module import was emitted as node/stream. There seem to be some edge cases of esm import syntax which result in incorrect declarations.

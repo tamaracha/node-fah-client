@@ -1,10 +1,11 @@
 {
   "compilerOptions": {
-    "allowJs": true,
     "checkJs": true,
-    "esModuleInterop": true,
-    "importHelpers": true,
     "baseUrl": "../",
-    "moduleResolution": "node"
-  }
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "strict": true,
+    "removeComments": true
+  },
+  "files": ["../lib/index.js"]
 }
