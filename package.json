@@ -25,7 +25,7 @@
     "format": "prettier '*.{json,yml,yaml}'",
     "pretest": "tsc -p ./config/tsconfig.tests.json",
     "test": "ava",
-    "instrument": "c8 --check-coverage --lines 70 --all --src lib -x **/*.spec.js -r html npm test",
+    "coverage": "c8 --check-coverage --lines 70 --all --src lib -x **/*.spec.js -r lcov npm test",
     "integration:esm": "node ./integration/esm/index.mjs",
     "integration:commonjs": "npm run build:commonjs && node ./integration/commonjs/index.cjs",
     "integration": "npm run integration:esm && npm run integration:commonjs",

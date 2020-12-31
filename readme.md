@@ -1,5 +1,6 @@
 # fah-client
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
+[![Coverage Status](https://coveralls.io/repos/github/tamaracha/node-fah-client/badge.svg?branch=main)](https://coveralls.io/github/tamaracha/node-fah-client?branch=main)
 
 The Folding@home project's background program (FahClient) provides a telnet-based [third party client interface] for client programs to monitor the current folding status.
 This interface is meant to be used by other software as well as by humans, which results in an API that feels more like a shell frontend.
