@@ -5,39 +5,21 @@
   "author": "Tamara Cook <10754072+tamaracha@users.noreply.github.com>",
   "license": "MIT",
   "repository": "github:tamaracha/node-fah-client",
-  "main": "./dist/index.js",
   "type": "module",
-  "exports": {
-    ".": {
-      "import": "./lib/index.js",
-      "require": "./dist/index.js"
-    },
-    "./commands": {
-      "import": "./lib/commands/index.js",
-      "require": "./dist/commands/index.js"
-    },
-    "./client": {
-      "import": "./lib/client/index.js",
-      "require": "./dist/client/index.js"
-    }
-  },
-  "types": "./types/index.d.ts",
   "scripts": {
+    "clean": "shx rm -rf coverage docs dist types",
     "lint": "standard --fix '{config,integration,lib}/**/*.?(c|m)js' | snazzy",
     "format": "prettier '*.{json,yml,yaml}'",
     "pretest": "tsc -p ./config/tsconfig.tests.json",
     "test": "ava",
     "coverage": "c8 --check-coverage --lines 70 --all --src lib -x **/*.spec.js -r lcov npm test",
     "integration:esm": "node ./integration/esm/index.mjs",
-    "integration:commonjs": "npm run build:commonjs && node ./integration/commonjs/index.cjs",
+    "integration:commonjs": "npm run build && node ./integration/commonjs/index.cjs",
     "integration": "npm run integration:esm && npm run integration:commonjs",
     "docs": "jsdoc -c ./config/jsdoc.config.json",
-    "prebuild:declarations": "shx rm -Rf ./types/",
-    "build:declarations": "tsc -p config/tsconfig.declarations.json",
-    "prebuild:commonjs": "shx rm -Rf dist/",
-    "build:commonjs": "tsc -p ./config/tsconfig.node12.json",
-    "postbuild:commonjs": "shx cp ./config/package.json ./dist/",
-    "build": "npm run build:declarations & npm run build:commonjs",
+    "prebuild": "npm run clean",
+    "build": "tsc -p ./config/tsconfig.node12.json",
+    "postbuild": "shx cp ./config/package.json ./dist/",
     "release": "release-it -c config/release-it.json"
   },
   "engine": {
@@ -65,6 +47,22 @@
     "tslib": "^2.0.3",
     "typed-emitter": "^1.3.1"
   },
+  "main": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./dist/index.js"
+    },
+    "./commands": {
+      "import": "./lib/commands/index.js",
+      "require": "./dist/commands/index.js"
+    },
+    "./client": {
+      "import": "./lib/client/index.js",
+      "require": "./dist/client/index.js"
+    }
+  },
+  "types": "./types/index.d.ts",
   "files": [
     "lib/**/!(*.spec).?(c|m)js",
     "dist/**/*",

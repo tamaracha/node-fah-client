@@ -4,8 +4,9 @@
     "target": "es2019",
     "lib": ["es2020"],
     "module": "commonjs",
-    "outDir": "../dist",
     "importHelpers": true,
-    "declaration": false
+    "declaration": true,
+    "outDir": "../dist",
+    "declarationDir": "../types"
   }
 }
