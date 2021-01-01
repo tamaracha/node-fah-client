@@ -6,6 +6,7 @@
     "module": "commonjs",
     "importHelpers": true,
     "declaration": true,
+    "incremental": true,
     "outDir": "../dist",
     "declarationDir": "../types"
   }
