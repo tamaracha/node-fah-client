@@ -1,5 +1,5 @@
 'use strict'
-const { FahClient, control } = require('../../dist/')
+const { FahClient, control } = require('fah-client')
 
 // create commands
 const cmd = control.heartbeat()

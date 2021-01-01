@@ -1,5 +1,5 @@
 'use strict'
-import { FahClient, control } from '../../lib/index.js'
+import { FahClient, control } from 'fah-client'
 
 // create commands
 const cmd = control.heartbeat()

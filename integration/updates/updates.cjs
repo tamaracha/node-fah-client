@@ -1,5 +1,5 @@
 'use strict'
-const { FahClient, control, options, slots, updates, work } = require('../../dist/index.js')
+const { FahClient, control, options, slots, updates, work } = require('fah-client')
 
 async function demo () {
   const fc = await FahClient.connect()
