@@ -8,15 +8,17 @@
   "main": "./dist/index.js",
   "type": "module",
   "exports": {
-    "import": {
-      ".": "./lib/index.js",
-      "./commands": "./lib/commands/index.js",
-      "./client": "./lib/client/index.js"
+    ".": {
+      "import": "./lib/index.js",
+      "require": "./dist/index.js"
     },
-    "require": {
-      ".": "./dist/index.js",
-      "./commands": "./dist/commands/index.js",
-      "./client": "./dist/client/index.js"
+    "./commands": {
+      "import": "./lib/commands/index.js",
+      "require": "./dist/commands/index.js"
+    },
+    "./client": {
+      "import": "./lib/client/index.js",
+      "require": "./dist/client/index.js"
     }
   },
   "types": "./types/index.d.ts",
