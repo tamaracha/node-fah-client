@@ -8,7 +8,6 @@
   "scripts": {
     "clean": "shx rm -rf coverage docs dist types",
     "lint": "standard --fix '{config,integration,lib}/**/*.?(c|m)js' | snazzy",
-    "format": "prettier '*.{json,yml,yaml}'",
     "pretest": "tsc -p ./config/tsconfig.tests.json",
     "test": "ava",
     "coverage": "c8 --check-coverage --lines 70 --all --src lib -x **/*.spec.js -r lcov npm test",
@@ -16,8 +15,9 @@
     "integration:commonjs": "npm run build && node ./integration/commonjs/index.cjs",
     "integration": "npm run integration:esm && npm run integration:commonjs",
     "docs": "jsdoc -c ./config/jsdoc.config.json",
+    "format": "prettier -w -u --loglevel warn dist types",
     "build": "tsc -p ./config/tsconfig.node12.json",
-    "postbuild": "shx cp ./config/package.json ./dist/",
+    "postbuild": "shx cp ./config/package.json ./dist/ && npm run format",
     "release": "release-it -c config/release-it.json"
   },
   "engine": {
@@ -67,6 +67,12 @@
     "dist/**/*.{js,json}",
     "types/**/*.d.ts"
   ],
+  "prettier": {
+    "arrowParens": "avoid",
+    "bracketSpacing": false,
+    "semi": false,
+    "singleQuote": true
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged -c ./config/lint-staged.config.js",
